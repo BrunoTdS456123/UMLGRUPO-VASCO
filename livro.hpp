@@ -1,73 +1,49 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #ifndef LIVRO_HPP
 #define LIVRO_HPP
 
+#include <iostream>
 
-using namespace std;
+class Livro {
 
-class Livro{
-    public:
-     Livro();
+public:
+
+    Livro();
+
     ~Livro();
-   
 
-     void setTitulo(std::string _titulo){
-            titulo = _titulo;
-        }
+    //get
 
-        void setAutor(std::string _autor){
-            autor = _autor;
-        }
+    int getAno();
 
-        void setAno(int _ano){
-            ano = _ano;
-        }
+    std::string getTitulo();
 
-        void setEditora(std::string _editora){
-            editora = _editora;
-        }   
+    std::string getAutor();
 
-        std::string getTitulo(){
-            return titulo;
-        }
+    std::string getEditora();
 
-        std::string getAutor(){
-            return autor;
-        }
+    int getId();
 
-        int getAno(){
-            return ano;
-        }
+    bool getStatus();
 
-        std::string getEditora(){
-            return editora;
-        }
+    //set
 
-        bool getStatus(){
-            return status;
-        }
+    void setTitulo(std::string _titulo);
 
-        void setStatus(bool _status){
-            status = _status;
-        }
+    void setAutor(std::string _autor);
 
-        void setId(int _id){
-            id = _id;
-        }
+    void setAno(int _ano);
 
-        int getId(){
-            return id;
-        }
+    void setEditora(std::string _genero);
 
+    void setStatus(bool _status);
 
+    void setId(int _id);
 
-    private:
-        bool status;
-        std::string titulo, autor, editora;
-        int ano, id;
-        
+private:
+
+    std::string titulo, autor, editora;
+    int ano, id;
+    bool status;
 };
 
 #endif

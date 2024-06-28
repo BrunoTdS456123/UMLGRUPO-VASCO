@@ -18,12 +18,23 @@ void inicializarLivros(std::vector<Livro*>& livros){
         livro->setAno(2000 + i+1);
         livro->setEditora("Editora " + std::to_string(i+1));
         livro->setId(i);
+        livro->setStatus(true);
         livros.push_back(livro);
+    }
+}
+
+void mostrarLivros(std::vector<Livro*>& livros) {
+    for (int i = 0; i < 10; i++) {
+        //colocar tamanho ao inves do "i", por que se for criado um livro novo pode ser que nao imprima ( o 11 )
+        Livro* livro = livros[i];
+        std::cout << "Livro: " << livro->getTitulo() << ", ID: " << livro->getId() + 1 << ", Autor: " << livro->getAutor() << ", Ano: " << livro->getAno() << std::endl;
+     
+      
     }
 }
 void inicializarBiblioteca(){
     User user;
-    cout << "-----------------------Bem vindo a biblioteca simas!----------------------\n|Digite:\n|1 Cadastrar usuario ,\n|2 Fazer login e \n|3 Entrar como admin\n|4 Sair";
+    cout << "-----------------------Bem vindo a biblioteca simas!----------------------\n|Digite:\n|1 Cadastrar usuario ,\n|2 Fazer login e \n|3 Entrar como admin\n|4 Sair\n";
     cin >> option ;
     switch(option){
     case 1:
@@ -50,6 +61,7 @@ int main(){
     
     inicializarBiblioteca();
     inicializarLivros(livros);
+    mostrarLivros(livros);
 
    
     //int is_adm;
