@@ -1,14 +1,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#ifndef USER_HPP
+#define USER_HPP
 
 
 using namespace std;
 
 class User{
 public:
-    User();
-    ~User();
+    User() {};
+    ~User() {};
 
     void setNome();
     void setID();
@@ -28,3 +30,5 @@ private:
     string email;
     string senha;
 };
+
+#endif

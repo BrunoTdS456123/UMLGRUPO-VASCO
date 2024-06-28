@@ -9,9 +9,7 @@ using namespace std;
 
 class Livro{
     public:
-    Livro(){
-        status = true;
-    };
+     Livro();
     ~Livro();
    
 

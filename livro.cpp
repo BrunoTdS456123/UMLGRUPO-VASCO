@@ -4,6 +4,8 @@
 #include <vector>
 
 
-Livro::Livro(){};
+Livro::Livro() {
+    status = true;
+};
 Livro::~Livro(){};
 

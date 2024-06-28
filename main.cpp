@@ -23,25 +23,25 @@ void inicializarLivros(std::vector<Livro*>& livros){
 }
 void inicializarBiblioteca(){
     User user;
-     cout << "----------------------Bem vindo a biblioteca simas!----------------------\n|Digite:\n|1 Cadastrar usuario ,\n|2 Fazer login e \n|3 Entrar como admin\n|4 Sair";
-     cin >> option ;
-     switch(option){
-        case 1:
-            user.cadastrar();
-            break;
-        case 2:
-            //user.login();
-            break;
-        case 3:
-            //user.admin(); 
-            break;
-        case 4:
-            return;
-            break;
-        default:
+    cout << "----------------------Bem vindo a biblioteca simas!----------------------\n|Digite:\n|1 Cadastrar usuario ,\n|2 Fazer login e \n|3 Entrar como admin\n|4 Sair";
+    cin >> option ;
+    switch(option){
+    case 1:
+        user.cadastrar();
+        break;
+    case 2:
+        //user.login();
+        break;
+    case 3:
+        user.isAdm(); 
+        break;
+    case 4:
+        return;
+        break;
+    default:
 
-            break;
-     }
+        break;
+    }
 }
 
 int main(){
