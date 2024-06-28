@@ -57,6 +57,7 @@ void inicializarBiblioteca(){
 
 int main(){
     std::vector<Livro*> livros;
+    std::vector<User*> user;
     
     
     inicializarBiblioteca();
