@@ -1,79 +1,70 @@
-#include<iostream>
+#include <iostream>
 #include <string>
-#include "user.hpp"
-#include "emprestimo.hpp"
-#include "livro.hpp"
 #include <vector>
 
-int option;
+#include "usuario.hpp"
+#include "admnistrador.hpp"
+#include "livro.hpp"
+#include "cadastro.hpp"
+#include "login.hpp"
+#include "inicio.hpp"
 
 
-using namespace std;
-
-void iniciarMultas(std::vector<User*>& users) {
-    for (User* user : users) {
-        user->calcMulta();
-    }
-}
-
-void inicializarLivros(std::vector<Livro*>& livros){
-    for (int i = 0; i < 10; i++) {
+void livroCriacao(std::vector<Livro*>& livros) {
+    for (int x = 0; x < 10; x++) {
         Livro* livro = new Livro();
-        livro->setTitulo("Livro " + std::to_string(i+1));
-        livro->setAutor("Autor " + std::to_string(i+1));
-        livro->setAno(2000 + i+1);
-        livro->setEditora("Editora " + std::to_string(i+1));
-        livro->setId(i);
-        livro->setStatus(true);
+        livro->setLancamento(2024);
+        livro->setGenero("Genero " + std::to_string(x + 1));
+        livro->setId(x);
+        livro->setTitulo("Título " + std::to_string(x + 1));
+        livro->setAutor("Autor " + std::to_string(x + 1));
         livros.push_back(livro);
     }
 }
-
-void mostrarLivros(std::vector<Livro*>& livros) {
-    for (int i = 0; i < 10; i++) {
-        //colocar tamanho ao inves do "i", por que se for criado um livro novo pode ser que nao imprima ( o 11 )
-        Livro* livro = livros[i];
-        std::cout << "Livro: " << livro->getTitulo() << ", ID: " << livro->getId() + 1 << ", Autor: " << livro->getAutor() << ", Ano: " << livro->getAno() << std::endl;
-     
-      
-    }
-}
-void inicializarBiblioteca(){
-    //User users;
-    cout << "------------------------Bem vindo a biblioteca simas!----------------------\n|Digite:\n|1 Cadastrar usuario ,\n|2 Fazer login e \n|3 Entrar como admin\n|4 Sair\n";
-    cin >> option ;
-    switch(option){
-    case 1:
-        
-        break;
-    case 2:
-        //user.login();
-        break;
-    case 3:
-         
-        break;
-    case 4:
-        return;
-        break;
-    default:
-
-        break;
+void multasInicio(std::vector<Usuario*>& usuarios) {
+    for (Usuario* usuario : usuarios) {
+        usuario->multasInicio();
     }
 }
 
-int main(){
+
+
+int main() {
     std::vector<Livro*> livros;
-    std::vector<User*> users;
+    std::vector<Adm*> administradores;
+    std::vector<Usuario*> usuarios;
     
-    
-    inicializarBiblioteca();
-    inicializarLivros(livros);
-    mostrarLivros(livros);
 
-   
-    //int is_adm;
-    //User onielson;
-    //onielson.cadastrar();
-    //onielson.isAdm();
-    return 0;
+    std::string admnistradorSenha = "flasco";
+
+    int usuarioId = 0;
+
+    livroCriacao(livros);
+    multasInicio(usuarios);
+    Inicio::inicio(usuarios, livros, administradores, usuarioId, admnistradorSenha);
+
+    
+
+    for (auto it = livros.begin(); it != livros.end(); ) {
+        delete* it;
+        *it = nullptr;
+        it = livros.erase(it);
+    }
+    livros.clear();
+
+    for (auto it = usuarios.begin(); it != usuarios.end(); ) {
+        delete* it;
+        *it = nullptr;
+        it = usuarios.erase(it);
+    }
+    usuarios.clear();
+
+    for (auto it = administradores.begin(); it != administradores.end(); ) {
+        delete* it;
+        *it = nullptr;
+        it = administradores.erase(it);
+    }
+    administradores.clear();
+
+    return 0; 
 }
