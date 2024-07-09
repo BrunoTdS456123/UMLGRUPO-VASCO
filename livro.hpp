@@ -6,44 +6,34 @@
 class Livro {
 
 public:
-
     Livro();
-
     ~Livro();
-
-    //get
-
     int getAno();
-
-    std::string getTitulo();
-
-    std::string getAutor();
-
-    std::string getEditora();
-
-    int getId();
-
-    bool getStatus();
-
-    //set
-
-    void setTitulo(std::string _titulo);
-
-    void setAutor(std::string _autor);
-
     void setAno(int _ano);
 
+
+    std::string getTitulo();
+    void setTitulo(std::string _titulo);
+
+    std::string getAutor();
+    void setAutor(std::string _autor);
+
+    std::string getEditora();
     void setEditora(std::string _genero);
 
-    void setStatus(bool _status);
-
+    int getId();
     void setId(int _id);
 
-private:
+    bool getStatus();
+    void setStatus(bool _status);
 
-    std::string titulo, autor, editora;
-    int ano, id;
+ private:
     bool status;
+
+    std::string  autor, editora,titulo ;
+
+    int ano, id;
+    
 };
 
 #endif

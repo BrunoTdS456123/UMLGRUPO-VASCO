@@ -1,13 +1,10 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include "user.hpp"
+#include "usuario.hpp"
 #include "emprestimo.hpp"
 #include "livro.hpp"
 
-//costrutor e destrutor
 
-User::User(std::string _login, std::string _senha, int _id, int _tipo) {
+
+Usuario::Usuario(std::string _login, std::string _senha, int _id, int _tipo) {
     login = _login;
     senha = _senha;
     id = _id;
@@ -16,70 +13,60 @@ User::User(std::string _login, std::string _senha, int _id, int _tipo) {
     tipo = _tipo;
 }
 
-User::~User() {
+Usuario::~Usuario() {
 
 }
 
-//get
 
-int User::getTipo() {
+
+int Usuario::getTipo() {
     return tipo;
 }
 
-float User::getMulta() {
+float Usuario::getMulta() {
     return multa;
 }
 
-int User::getId() {
+int Usuario::getId() {
     return id;
 }
 
-std::string User::getLogin() {
+std::string Usuario::getLogin() {
     return login;
 }
 
-std::string User::getSenha() {
+std::string Usuario::getSenha() {
     return senha;
 }
 
-//set
 
-void User::setLoginSenha(std::string _login, std::string _senha) {
+
+void Usuario::setLoginSenha(std::string _login, std::string _senha) {
     senha = _senha;
     login = _login;
 }
 
-void User::setMulta(float _multa) {
+void Usuario::setMulta(float _multa) {
     multa = _multa;
 }
 
-void User::setStatus(bool _status) {
+void Usuario::setStatus(bool _status) {
     status = _status;
 }
 
-void User::exibirDados(std::vector<Livro*>& livros) {
+void Usuario::exibirDados(std::vector<Livro*>& livros) {
     std::cout << "\n---------------------------\n";
     std::cout << "\nLogin: " << login << std::endl;
+    
     std::cout << "Multa: " << multa << std::endl;
 
-    if (emprestimos.size() > 0) {
-        std::cout << "\nLivros emprestados: " << std::endl;
-        for (Emprestimo* emprestimo : emprestimos) {
-            int id = emprestimo->getIdLivro();
-            std::cout << "\n" << livros[id]->getTitulo() << ", ID: " << id + 1 << std::endl;
-            std::cout << "Data de emprestimo: " << emprestimo->mostrarDataEmprestimo();
-            std::cout << "Data de devolucao: " << emprestimo->mostrarDataDevolucao();
-            if (livros[id]->getStatus()) {
-                std::cout << "!!Devolvido!!\n";
-            }
-        }
-    }
-    std::cout << "\n";
+     
+  
 }
 
-void User::emprestarLivro(std::vector<Livro*>& livros) {
+void Usuario::emprestarLivro(std::vector<Livro*>& livros) {
     if (multa > 300) {
-        std::cout << "\nUsuário bloqueado por excesso de multa\n";
+        std::cout << "\nUsu�rio bloqueado por excesso de multa\n";
         return;
     }
     int id = livrosDisponiveis(livros);
@@ -87,15 +74,15 @@ void User::emprestarLivro(std::vector<Livro*>& livros) {
     emprestimos.push_back(emprestimo);
 }
 
-void User::calcMulta() {
-    multa = 0;
-    for (Emprestimo* emprestimo : emprestimos) {
-        multa += emprestimo->calcMulta();
-    }
-    setMulta(multa);
-}
+//void Usuario::addMulta() {
+   // multa = 0;
+   // for (Emprestimo* emprestimo : emprestimos) {
+   //     multa += emprestimo->calcMulta();
+   // }
+   // setMulta(multa);
+//}
 
-void User::devolverLivro(std::vector<Livro*>& livros) {
+void Usuario::devolverLivro(std::vector<Livro*>& livros) {
     int op;
     bool devolvido = false;
     std::cout << "\n---------------------------\n";
@@ -119,7 +106,7 @@ void User::devolverLivro(std::vector<Livro*>& livros) {
     return;
 }
 
-void User::pagarMulta() {
+void Usuario::pagarMulta() {
     float valor;
     std::cout << "\nDigite o valor que deseja pagar: ";
     std::cin >> valor;
@@ -130,7 +117,7 @@ void User::pagarMulta() {
     std::cout << "\nMulta paga com sucesso\n";
 }
 
-int User::livrosDisponiveis(std::vector<Livro*>& livros) {
+int Usuario::livrosDisponiveis(std::vector<Livro*>& livros) {
     int nLivro;
     std::cout << "\n---------------------------\n";
     std::cout << "\nEscolha um livro e digite seu ID\n\n";
@@ -144,7 +131,7 @@ int User::livrosDisponiveis(std::vector<Livro*>& livros) {
     std::cout << "\nSua escolha: ";
     std::cin >> nLivro;
     if (nLivro > livros.size() || nLivro < 0) {
-        std::cout << "\nID inválido\n";
+        std::cout << "\nID inv�lido\n";
         return -1;
     }
     int id = livros[nLivro - 1]->getId();
@@ -152,12 +139,12 @@ int User::livrosDisponiveis(std::vector<Livro*>& livros) {
     return id;
 }
 
-void User::opcoesUsuario(std::vector<Livro*>& livros, std::vector<User*>& users) {
+void Usuario::opcoesUsuario(std::vector<Livro*>& livros, std::vector<Usuario*>& usuarios) {
     int opcao;
 
     while (true) {
         std::cout << "\n---------------------------\n";
-        std::cout << "\n1 - Emprestar livro\n2 - Devolver livro\n3 - Pagar multa\n4 - Exibir dados\n0 - Sair\n\nSua opçao: ";
+        std::cout << "\n1 - Emprestar livro\n2 - Devolver livro\n3 - Pagar multa\n4 - Exibir dados\n0 - Sair\n\nSua op�ao: ";
         std::cin >> opcao;
 
         if (opcao == 1) {
@@ -173,21 +160,21 @@ void User::opcoesUsuario(std::vector<Livro*>& livros, std::vector<User*>& users)
             exibirDados(livros);
         }
         else if (opcao == 5) {
-            autoDeletar(users);
+            autoDeletar(usuarios);
         }
         else if (opcao == 0) {
             break;
         }
         else {
-            std::cout << "\nOpção invalida\n";
+            std::cout << "\nOp��o invalida\n";
         }
     }
 }
 
-void User::autoDeletar(std::vector<User*>& users) {
-    for (auto it = users.begin(); it != users.end(); ) {
+void Usuario::autoDeletar(std::vector<Usuario*>& usuarios) {
+    for (auto it = usuarios.begin(); it != usuarios.end(); ) {
         if (*it == this) {
-            it = users.erase(it);
+            it = usuarios.erase(it);
             delete this;
             break;
         }

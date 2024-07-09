@@ -127,23 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="adm.cpp" />
+    <ClCompile Include="admnistrador.cpp" />
     <ClCompile Include="cadastro.cpp" />
     <ClCompile Include="emprestimo.cpp" />
     <ClCompile Include="inicio.cpp" />
     <ClCompile Include="livro.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="user.cpp" />
+    <ClCompile Include="usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="adm.hpp" />
+    <ClInclude Include="admnistrador.hpp" />
     <ClInclude Include="cadastro.hpp" />
     <ClInclude Include="emprestimo.hpp" />
     <ClInclude Include="inicio.hpp" />
     <ClInclude Include="livro.hpp" />
     <ClInclude Include="login.hpp" />
-    <ClInclude Include="user.hpp" />
+    <ClInclude Include="usuario.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

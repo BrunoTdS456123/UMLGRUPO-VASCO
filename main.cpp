@@ -13,8 +13,8 @@
 void livroCriacao(std::vector<Livro*>& livros) {
     for (int x = 0; x < 10; x++) {
         Livro* livro = new Livro();
-        livro->setLancamento(2024);
-        livro->setGenero("Genero " + std::to_string(x + 1));
+        livro->setAno(2024);
+        livro->setEditora("Editora " + std::to_string(x + 1));
         livro->setId(x);
         livro->setTitulo("Título " + std::to_string(x + 1));
         livro->setAutor("Autor " + std::to_string(x + 1));
@@ -23,19 +23,20 @@ void livroCriacao(std::vector<Livro*>& livros) {
 }
 void multasInicio(std::vector<Usuario*>& usuarios) {
     for (Usuario* usuario : usuarios) {
-        usuario->multasInicio();
+        //usuario->multasInicio();
     }
 }
 
 
 
 int main() {
+    std::string admnistradorSenha = "flasco";
     std::vector<Livro*> livros;
     std::vector<Adm*> administradores;
     std::vector<Usuario*> usuarios;
     
 
-    std::string admnistradorSenha = "flasco";
+    
 
     int usuarioId = 0;
 

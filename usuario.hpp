@@ -8,15 +8,15 @@
 class Livro;
 class Emprestimo;
 
-class User {
+class Usuario {
 
 public:
 
-    User(std::string _login, std::string _senha, int _id, int _tipo);
+    Usuario(std::string _login, std::string _senha, int _id, int _tipo);
 
-    ~User();
+    ~Usuario();
 
-    //get
+ 
 
     int getTipo();
 
@@ -28,7 +28,7 @@ public:
 
     std::string getSenha();
 
-    //set
+
 
     void setLoginSenha(std::string _login, std::string _senha);
 
@@ -36,7 +36,7 @@ public:
 
     void setStatus(bool _status);
 
-    //funcoes
+
 
     void exibirDados(std::vector<Livro*>& livros);
 
@@ -50,17 +50,19 @@ public:
 
     int livrosDisponiveis(std::vector<Livro*>& livros);
 
-    void opcoesUsuario(std::vector<Livro*>& livros, std::vector<User*>& users);
+    void opcoesUsuario(std::vector<Livro*>& livros, std::vector<Usuario*>& usuarios);
 
-    void autoDeletar(std::vector<User*>& users);
+    void autoDeletar(std::vector<Usuario*>& usuarios);
 
 private:
 
-    std::string senha, login;
+    std::string senha;
+    std::string login;
     float multa;
     bool status;
     std::vector<Emprestimo*> emprestimos;
-    int id, tipo;
+    int id;
+    int tipo;
 };
 
 #endif
