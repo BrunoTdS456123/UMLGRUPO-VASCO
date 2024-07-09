@@ -1,34 +1,66 @@
+#ifndef USUARIO_HPP
+#define USUARIO_HPP
+
+#include <vector>
 #include <iostream>
 #include <string>
-#include <vector>
-#ifndef USER_HPP
-#define USER_HPP
 
+class Livro;
+class Emprestimo;
 
-using namespace std;
+class User {
 
-class User{
 public:
-    User() {};
-    ~User() {};
 
-    void setNome();
-    void setID();
-    void setEmail();
-    void cadastrar();
-    int isAdm();
-    void modificarStatusUsuario();
-    void pagamentoMulta();
-    
+    User(std::string _login, std::string _senha, int _id, int _tipo);
+
+    ~User();
+
+    //get
+
+    int getTipo();
+
+    float getMulta();
+
+    int getId();
+
+    std::string getLogin();
+
+    std::string getSenha();
+
+    //set
+
+    void setLoginSenha(std::string _login, std::string _senha);
+
+    void setMulta(float _multa);
+
+    void setStatus(bool _status);
+
+    //funcoes
+
+    void exibirDados(std::vector<Livro*>& livros);
+
+    void emprestarLivro(std::vector<Livro*>& livros);
+
+    void calcMulta();
+
+    void devolverLivro(std::vector<Livro*>& livros);
+
+    void pagarMulta();
+
+    int livrosDisponiveis(std::vector<Livro*>& livros);
+
+    void opcoesUsuario(std::vector<Livro*>& livros, std::vector<User*>& users);
+
+    void autoDeletar(std::vector<User*>& users);
+
 private:
-    int is_adm;
-    int adm_pass = 123;
-    int multa = 0;
-    int v_multa = 0;
-    string id;
-    string nome;
-    string email;
-    string senha;
+
+    std::string senha, login;
+    float multa;
+    bool status;
+    std::vector<Emprestimo*> emprestimos;
+    int id, tipo;
 };
 
 #endif

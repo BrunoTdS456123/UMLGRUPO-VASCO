@@ -10,6 +10,12 @@ int option;
 
 using namespace std;
 
+void iniciarMultas(std::vector<User*>& users) {
+    for (User* user : users) {
+        user->calcMulta();
+    }
+}
+
 void inicializarLivros(std::vector<Livro*>& livros){
     for (int i = 0; i < 10; i++) {
         Livro* livro = new Livro();
@@ -33,18 +39,18 @@ void mostrarLivros(std::vector<Livro*>& livros) {
     }
 }
 void inicializarBiblioteca(){
-    User user;
-    cout << "-----------------------Bem vindo a biblioteca simas!----------------------\n|Digite:\n|1 Cadastrar usuario ,\n|2 Fazer login e \n|3 Entrar como admin\n|4 Sair\n";
+    //User users;
+    cout << "------------------------Bem vindo a biblioteca simas!----------------------\n|Digite:\n|1 Cadastrar usuario ,\n|2 Fazer login e \n|3 Entrar como admin\n|4 Sair\n";
     cin >> option ;
     switch(option){
     case 1:
-        user.cadastrar();
+        
         break;
     case 2:
         //user.login();
         break;
     case 3:
-        user.isAdm(); 
+         
         break;
     case 4:
         return;
@@ -57,7 +63,7 @@ void inicializarBiblioteca(){
 
 int main(){
     std::vector<Livro*> livros;
-    std::vector<User*> user;
+    std::vector<User*> users;
     
     
     inicializarBiblioteca();
