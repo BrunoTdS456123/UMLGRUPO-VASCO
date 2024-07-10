@@ -20,17 +20,17 @@ public:
 
     bool operator==(Adm& other);
 
-    int opcoesUsuario(std::vector<Livro*>& livros, std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int usuarioId, std::string senhaAdm);
+    int opcoesUsuario(std::vector<Livro*>& livros, std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int usuarioId, std::string admnistradorSenha);
 
     void exibirUsuarios(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, std::vector<Livro*>& livros);
 
-    void opcoesAdm(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int idUsuari, std::string senhaAdm, std::vector<Livro*>& livros);
+    void opcoesAdm(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int idUsuari, std::string admnistradorSenha, std::vector<Livro*>& livros);
 
     void deleteUser(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int idUser);
 
     void autoDeletar(std::vector<Adm*>& adms);
 
-    void addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, std::vector<Adm*>& adms, int idUsuario, std::string senhaAdm);
+    void addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, std::vector<Adm*>& adms, int idUsuario, std::string admnistradorSenha);
 
     void addLivro(std::vector<Livro*>& livros);
 
@@ -41,6 +41,8 @@ public:
     void removerLivro(std::vector<Livro*>& livros);
 
     void verificarUser(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, std::vector<Livro*>& livros);
+    
+    
 
     void opcaoAdmUsuario(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int idUser);
 

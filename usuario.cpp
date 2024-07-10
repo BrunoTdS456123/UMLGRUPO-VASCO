@@ -65,13 +65,14 @@ void Usuario::exibirDados(std::vector<Livro*>& livros) {
 }
 
 void Usuario::emprestarLivro(std::vector<Livro*>& livros) {
-    if (multa > 300) {
+    if (multa > 50) {
         std::cout << "\nUsu�rio bloqueado por excesso de multa\n";
         return;
     }
     int id = livrosDisponiveis(livros);
     Emprestimo* emprestimo = new Emprestimo(id);
     emprestimos.push_back(emprestimo);
+    std::cout << "\nData de emprestimo: 10/07/2024\n\nData de devolucao: 25/07/2024\n";
 }
 
 //void Usuario::addMulta() {
@@ -97,6 +98,7 @@ void Usuario::devolverLivro(std::vector<Livro*>& livros) {
         if (op - 1 == emprestimo->getIdLivro()) {
             livros[op - 1]->setStatus(true);
             devolvido = true;
+            std::cout << "\nLivro devolvido! ";
             break;
         }
     }

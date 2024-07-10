@@ -26,9 +26,6 @@ void multasInicio(std::vector<Usuario*>& usuarios) {
         //usuario->multasInicio();
     }
 }
-
-
-
 int main() {
     std::string admnistradorSenha = "flasco";
     std::vector<Livro*> livros;

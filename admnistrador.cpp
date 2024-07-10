@@ -52,15 +52,15 @@ int Adm::opcoesUsuario(std::vector<Livro*>& livros, std::vector<Usuario*>& usuar
 }
 
 void Adm::exibirUsuarios(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, std::vector<Livro*>& livros) {
-    std::cout << "\n¦---------------------------\n";
-    std::cout << "\n¦Usuarios:\n\n";
+    std::cout << "\n---------------------------\n";
+    std::cout << "\nUsuarios:\n\n";
     for (Usuario* usuario : usuarios) {
         std::cout << "Usuario: " << usuario->getLogin() << " , ID: " << usuario->getId() + 1 << " , multa: " << usuario->getMulta() << std::endl;
     }
 
     bool found = false;
     int thisId = this->getId();
-    std::cout << "\n¦Administradores:\n\n";
+    std::cout << "\nAdministradores:\n\n";
     for (Adm* adm : adms) {
         if (!found) {
             if (adm->getId() == thisId) {
@@ -76,7 +76,7 @@ void Adm::exibirUsuarios(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adm
     }
 }
 
-void Adm::opcoesAdm(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int idUsuari, std::string senhaAdm, std::vector<Livro*>& livros) {
+void Adm::opcoesAdm(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int idUsuari, std::string admnistradorSenha, std::vector<Livro*>& livros) {
     int opcao;
 
     while (true) {
@@ -91,7 +91,7 @@ void Adm::opcoesAdm(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, in
             verificarUser(usuarios, adms, livros);
         }
         else if (opcao == 2) {
-            addUser(usuarios, livros, adms, idUsuari, senhaAdm);
+            addUser(usuarios, livros, adms, idUsuari, admnistradorSenha);
         }
         else {
             std::cout << "\nOpcao invalida\n";
