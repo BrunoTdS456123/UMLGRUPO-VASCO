@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net" modified="2024-07-09T23:22:34.619Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 OPR/109.0.0.0" etag="PUIj2GoXykCeD5DGOQNw" version="24.5.2" type="github">
+  <diagram name="Página-1" id="ntha0vDGk8QH1R2kDH7f">
+    <mxGraphModel dx="1247" dy="723" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--1" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="10" y="520" width="820" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--2" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ login: String&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ id: int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- emprestimos: vector&amp;lt;Emprestimo*&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- valorMulta: float&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- status: Bool&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- senha: String&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- tipo: int&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="v7Bx9ESIPNU5SMYb1CD--1" vertex="1">
+          <mxGeometry y="26" width="820" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="v7Bx9ESIPNU5SMYb1CD--1" vertex="1">
+          <mxGeometry y="140" width="820" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--4" value="&lt;div&gt;+void exibirDados(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void emprestarLivro(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void calcMulta();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void devolverLivro(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void pagarMulta();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+int livrosDisponiveis(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+void opcoesUsuario(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros, std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios);&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void autoDeletar(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="v7Bx9ESIPNU5SMYb1CD--1" vertex="1">
+          <mxGeometry y="148" width="820" height="232" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--5" value="Livro" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="939" y="570" width="160" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--6" value="- titulo: String&lt;div&gt;- idLivro: int&lt;/div&gt;&lt;div&gt;- autor: String&lt;/div&gt;&lt;div&gt;- genero: String&lt;/div&gt;&lt;div&gt;- ano: String&lt;/div&gt;&lt;div&gt;- status: Bool&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="v7Bx9ESIPNU5SMYb1CD--5" vertex="1">
+          <mxGeometry y="26" width="160" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="v7Bx9ESIPNU5SMYb1CD--5" vertex="1">
+          <mxGeometry y="120" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--8" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="v7Bx9ESIPNU5SMYb1CD--5" vertex="1">
+          <mxGeometry y="128" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--13" value="Admin" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="10" y="50" width="820" height="444" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="v7Bx9ESIPNU5SMYb1CD--13" vertex="1">
+          <mxGeometry y="26" width="820" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--16" value="&lt;div&gt;+bool operator==(Adm&amp;amp; other);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+int opcoesUsuario(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros, std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, int idUsuario, std::string senhaAdm);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;void exibirUsuarios(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;&amp;nbsp;void opcoesAdm(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, int idUsuari, std::string senhaAdm, std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;void deleteUser(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, int idUser);&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;void autoDeletar(std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void addUser(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, int idUsuario, std::string senhaAdm);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+void addLivro(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;void exibirLivros(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+void opcoesLivro(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;void removerLivro(std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;void verificarUser(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, std::vector&amp;lt;Livro*&amp;gt;&amp;amp; livros);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;void opcaoAdmUsuario(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, int idUser);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;void multar(std::vector&amp;lt;Usuario*&amp;gt;&amp;amp; usuarios, std::vector&amp;lt;Adm*&amp;gt;&amp;amp; adms, int idUser);&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="v7Bx9ESIPNU5SMYb1CD--13" vertex="1">
+          <mxGeometry y="34" width="820" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--17" value="Emprestimo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="869" y="330" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--18" value="&lt;div&gt;- dataEmprestimoInicio: DATA&lt;/div&gt;&lt;div&gt;- dataDevolucao: DATA&lt;/div&gt;&lt;div&gt;- idLivro: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="v7Bx9ESIPNU5SMYb1CD--17" vertex="1">
+          <mxGeometry y="26" width="300" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="v7Bx9ESIPNU5SMYb1CD--17" vertex="1">
+          <mxGeometry y="80" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="v7Bx9ESIPNU5SMYb1CD--20" value="+float calcMulta();" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="v7Bx9ESIPNU5SMYb1CD--17" vertex="1">
+          <mxGeometry y="88" width="300" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="9AptvYFkK9kt4ZJdGPmO-2" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.186;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="v7Bx9ESIPNU5SMYb1CD--18" target="v7Bx9ESIPNU5SMYb1CD--2" edge="1">
+          <mxGeometry x="-0.8948" relative="1" as="geometry">
+            <mxPoint x="1330" y="290" as="sourcePoint" />
+            <mxPoint x="1490" y="290" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4-LF-piWgQbEj3VSoYox-1" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="v7Bx9ESIPNU5SMYb1CD--20">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="780" y="570" as="sourcePoint" />
+            <mxPoint x="940" y="570" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1220" y="439" />
+              <mxPoint x="1220" y="515" />
+              <mxPoint x="941" y="515" />
+              <mxPoint x="941" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
