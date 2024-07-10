@@ -11,10 +11,10 @@ void Login::login(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, 
 
     while (true) {
         std::cout << "\n---------------------------\n";
-        std::cout << "\nDigite o nome de usuario: ";
+        std::cout << "\nInsira o nome de usuario: ";
         std::cin >> login;
 
-        std::cout << "Digite a senha: ";
+        std::cout << "Insira a senha: ";
         std::cin >> senha;
 
         bool found = false;

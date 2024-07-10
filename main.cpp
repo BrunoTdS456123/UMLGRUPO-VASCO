@@ -16,29 +16,21 @@ void livroCriacao(std::vector<Livro*>& livros) {
         livro->setAno(2024);
         livro->setEditora("Editora " + std::to_string(x + 1));
         livro->setId(x);
-        livro->setTitulo("Título " + std::to_string(x + 1));
+        livro->setTitulo("Tï¿½tulo " + std::to_string(x + 1));
         livro->setAutor("Autor " + std::to_string(x + 1));
         livros.push_back(livro);
     }
 }
-void multasInicio(std::vector<Usuario*>& usuarios) {
-    for (Usuario* usuario : usuarios) {
-        //usuario->multasInicio();
-    }
-}
+
 int main() {
     std::string admnistradorSenha = "flasco";
     std::vector<Livro*> livros;
     std::vector<Adm*> administradores;
     std::vector<Usuario*> usuarios;
     
-
-    
-
     int usuarioId = 0;
 
     livroCriacao(livros);
-    multasInicio(usuarios);
     Inicio::inicio(usuarios, livros, administradores, usuarioId, admnistradorSenha);
 
     

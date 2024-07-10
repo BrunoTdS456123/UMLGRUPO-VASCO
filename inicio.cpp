@@ -5,11 +5,11 @@
 void Inicio::inicio(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, std::vector<Adm*>& adms, int& usuarioId, std::string administradorSenha) {
     int opcao;
 
-    std::cout << "\nBem-vindo ao sistema de biblioteca\n";
+    std::cout << "\nSeja bem-vindo ao inicio da biblioteca flasco\n";
 
     while (true) {
-        std::cout << "\n---------------------------\n";
-        std::cout << "\n1 - Cadastro\n2 - Login\n0 - Sair\n\nSua opcao: ";
+        std::cout << "\n===================================================\n";
+        std::cout << "\nDigite: 1 -Fazer cadastro\n2 -Fazer Login\n0 - Sair\n\nSua opcao: ";
         std::cin >> opcao;
 
         if (opcao == 0) {
@@ -22,7 +22,7 @@ void Inicio::inicio(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros
             Login::login(usuarios, livros, adms, usuarioId, administradorSenha);
         }
         else {
-            std::cout << "\nOpcao invalida\n";
+            std::cout << "\nErro!!!\n";
         }
     }
 }

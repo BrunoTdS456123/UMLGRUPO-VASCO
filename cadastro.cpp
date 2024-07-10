@@ -7,8 +7,8 @@
 void Cadastro::cadastro(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, std::vector<Adm*>& adms, int& usuarioId, std::string admnistradorSenha) {
     std::string nomeUsuario, senha;
     while (true) {
-        std::cout << "\n---------------------------\n";
-        std::cout << "\nDigite o nome de usuario: ";
+        std::cout << "\n===================================================\n";
+        std::cout << "\nInsira o nome de usuario: ";
         std::cin >> nomeUsuario;
 
         bool existeUser = false;
@@ -28,7 +28,7 @@ void Cadastro::cadastro(std::vector<Usuario*>& usuarios, std::vector<Livro*>& li
             }
         }
         if (existeUser) {
-            std::cout << "\nUsuario ja existe\n";
+            std::cout << "\nUsuario ja existente!\n";
         }
         else {
             break;
@@ -36,11 +36,11 @@ void Cadastro::cadastro(std::vector<Usuario*>& usuarios, std::vector<Livro*>& li
     }
 
     while (true) {
-        std::cout << "Digite a senha: ";
+        std::cout << "Insira a senha: ";
         std::cin >> senha;
 
         if (senha == admnistradorSenha) {
-            std::cout << "\nSenha invalida\n";
+            std::cout << "\nErro!!!\n";
         }
         else {
             break;
@@ -48,7 +48,7 @@ void Cadastro::cadastro(std::vector<Usuario*>& usuarios, std::vector<Livro*>& li
     }
 
     while (true) {
-        std::cout << "\nVoce esta cadastrando um administrador ou usuario (1 - Admin, 2 - Usuario): ";
+        std::cout << "\nVoce quer cadastrar como um administrador ou como um usuario\n (1 - Administrador, 2 - Usuario): ";
         int opcao;
         std::cin >> opcao;
         if (opcao == 1) {
@@ -56,18 +56,18 @@ void Cadastro::cadastro(std::vector<Usuario*>& usuarios, std::vector<Livro*>& li
 
             for (int i = 0; i < 5; i += 1) {
                 std::string codigo;
-                std::cout << "Digite o codigo de verificacao: ";
+                std::cout << "Insira o codigo de verificacao: ";
                 std::cin >> codigo;
                 if (codigo == admnistradorSenha) {
                     int tipo = 1;
                     Adm* adm = new Adm(nomeUsuario, senha, usuarioId, tipo);
                     adms.push_back(adm);
-                    std::cout << "\nAdministrador cadastrado com sucesso!!!\n";
+                    std::cout << "\nAdministrador foi cadastrado com exito!!!\n";
                     existeAdm = true;
                     break;
                 }
                 else {
-                    std::cout << "\nCodigo invalido\n";
+                    std::cout << "\nErro!!!\n";
                 }
             }
             if (existeAdm) {
@@ -82,11 +82,11 @@ void Cadastro::cadastro(std::vector<Usuario*>& usuarios, std::vector<Livro*>& li
             int tipo = 2;
             Usuario* usuario = new Usuario(nomeUsuario, senha, usuarioId, tipo);
             usuarios.push_back(usuario);
-            std::cout << "\nUsuario cadastrado com sucesso!!!\n";
+            std::cout << "\nUsuario cadastrado com exito!!!\n";
             break;
         }
         else {
-            std::cout << "\nOpcao invalida\n";
+            std::cout << "\nErro!!!\n";
         }
     }
     usuarioId += 1;

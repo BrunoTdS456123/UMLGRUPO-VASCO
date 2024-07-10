@@ -2,7 +2,6 @@
 #include "usuario.hpp"
 #include "livro.hpp"
 
-//costrutor e destrutor
 
 Adm::Adm(std::string _login, std::string _senha, int _id, int _tipo) : Usuario(_login, _senha, _id, _tipo) {};
 
@@ -16,8 +15,8 @@ int Adm::opcoesUsuario(std::vector<Livro*>& livros, std::vector<Usuario*>& usuar
     int opcao;
 
     while (true) {
-        std::cout << "\n¦---------------------------\n";
-        std::cout << "\n¦1 - Emprestar livro\n2 - Devolver livro\n3 - Pagar multa\n4 - Exibir dados\n5 - Exibir usuarios\n6 - Exibir livros\n0 - Sair\n\nSua opcao: ";
+        std::cout << "\n===================================================\n";
+        std::cout << "Digite:\n1  Emprestar livro\n2  Devolver livro\n3  Pagar multa\n4  Mostrar informacoes\n5  Mostrar usuarios\n6  Mostrar livros disponiveis\n0  Sair\n\nSua escolha: ";
         std::cin >> opcao;
 
         if (opcao == 0) {
@@ -52,7 +51,7 @@ int Adm::opcoesUsuario(std::vector<Livro*>& livros, std::vector<Usuario*>& usuar
 }
 
 void Adm::exibirUsuarios(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, std::vector<Livro*>& livros) {
-    std::cout << "\n---------------------------\n";
+    std::cout << "\n===================================================\n";
     std::cout << "\nUsuarios:\n\n";
     for (Usuario* usuario : usuarios) {
         std::cout << "Usuario: " << usuario->getLogin() << " , ID: " << usuario->getId() + 1 << " , multa: " << usuario->getMulta() << std::endl;
@@ -81,7 +80,7 @@ void Adm::opcoesAdm(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, in
 
     while (true) {
         std::cout << "\n---------------------------\n";
-        std::cout << "\n1 - verificar user \n2 - Add user\n0 - Sair\n\nSua opcao: ";
+        std::cout << "Digite:\n1 - verificar usuario \n2 - Adicionar usuario\n0 - Sair\n\nSua opcao: ";
         std::cin >> opcao;
 
         if (opcao == 0) {
@@ -121,7 +120,7 @@ void Adm::deleteUser(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, i
             std::cout << "\nUsuario nao encontrado\n";
         }
         else {
-            std::cout << "\nUsuario excluido com sucesso\n";
+            std::cout << "\nUsuario excluido com exito\n";
             break;
         }
     }
@@ -143,8 +142,8 @@ void Adm::autoDeletar(std::vector<Adm*>& adms) {
 void Adm::addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, std::vector<Adm*>& adms, int usuarioId, std::string admnistradorSenha) {
     std::string nomeUsuario, senha;
     while (true) {
-        std::cout << "\n---------------------------\n";
-        std::cout << "\nDigite o nome de usuario: ";
+        std::cout << "\n===================================================\n";
+        std::cout << "\nInsira o nome de usuario: ";
         std::cin >> nomeUsuario;
 
         bool existeUser = false;
@@ -164,7 +163,7 @@ void Adm::addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, 
             }
         }
         if (existeUser) {
-            std::cout << "\nUsuario ja existe\n";
+            std::cout << "\nUsuario ja existente\n";
         }
         else {
             break;
@@ -172,11 +171,11 @@ void Adm::addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, 
     }
 
     while (true) {
-        std::cout << "Digite a senha: ";
+        std::cout << "Insira a senha: ";
         std::cin >> senha;
 
         if (senha == admnistradorSenha) {
-            std::cout << "\nSenha invalida\n";
+            std::cout << "\nErro!!!\n";
         }
         else {
             break;
@@ -184,7 +183,7 @@ void Adm::addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, 
     }
 
     while (true) {
-        std::cout << "\nVoce esta cadastrando um administrador ou usuario (1 - Admin, 2 - Usuario): ";
+        std::cout << "\nVoce quer cadastrar como um administrador ou como usuario (1 - Admin, 2 - Usuario): ";
         int opcao;
         std::cin >> opcao;
         if (opcao == 1) {
@@ -192,18 +191,18 @@ void Adm::addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, 
 
             for (int i = 0; i < 5; i += 1) {
                 std::string codigo;
-                std::cout << "Digite o codigo de verificacao: ";
+                std::cout << "Insira o codigo de verificacao: ";
                 std::cin >> codigo;
                 if (codigo == admnistradorSenha) {
                     int tipo = 1;
                     Adm* adm = new Adm(nomeUsuario, senha, usuarioId, tipo);
                     adms.push_back(adm);
-                    std::cout << "\nAdministrador cadastrado com sucesso!!!\n";
+                    std::cout << "\nAdministrador cadastrado com exito!!!\n";
                     existeAdm = true;
                     break;
                 }
                 else {
-                    std::cout << "\nCodigo invalido\n";
+                    std::cout << "\nErro!!!\n";
                 }
             }
             if (existeAdm) {
@@ -218,11 +217,11 @@ void Adm::addUser(std::vector<Usuario*>& usuarios, std::vector<Livro*>& livros, 
             int tipo = 2;
             Usuario* usuario = new Usuario(nomeUsuario, senha, usuarioId, tipo);
             usuarios.push_back(usuario);
-            std::cout << "\nUsuario cadastrado com sucesso!!!\n";
+            std::cout << "\nUsuario cadastrado com exito!!!\n";
             break;
         }
         else {
-            std::cout << "\nOpcao invalida\n";
+            std::cout << "\nErro!!!\n";
         }
     }
     usuarioId += 1;
@@ -234,20 +233,20 @@ void Adm::addLivro(std::vector<Livro*>& livros) {
     std::string titulo, autor, editora;
     int ano;
 
-    std::cout << "\n¦---------------------------\n";
-    std::cout << "\n¦Digite o titulo do livro: ";
+    std::cout << "\n===================================================\n";
+    std::cout << "\nInsira o titulo do livro: ";
     std::cin >> titulo;
     livro->setTitulo(titulo);
 
-    std::cout << "\nDigite o autor do livro: ";
+    std::cout << "\nInsira o autor do livro: ";
     std::cin >> autor;
     livro->setAutor(autor);
 
-    std::cout << "\nDigite o genero do livro: ";
+    std::cout << "\nInsira a editora do livro: ";
     std::cin >> editora;
     livro->setEditora(editora);
 
-    std::cout << "\nDigite o ano do livro: ";
+    std::cout << "\nInsira o ano do livro: ";
     std::cin >> ano;
     livro->setAno(ano);
 
@@ -271,7 +270,7 @@ void Adm::opcoesLivro(std::vector<Livro*>& livros) {
     int opcao;
     while (true) {
         std::cout << "\n---------------------------\n";
-        std::cout << "\n1 - Adicionar livro\n2 - Remover livro\n0 - Sair\n\nSua opcao: ";
+        std::cout << "Digite:\n1 - Adicionar livro\n2 - Excluir livro\n0 - Sair\n\nSua opcao: ";
         std::cin >> opcao;
 
         if (opcao == 0) {
@@ -291,7 +290,7 @@ void Adm::opcoesLivro(std::vector<Livro*>& livros) {
 
 void Adm::removerLivro(std::vector<Livro*>& livros) {
     std::cout << "\n---------------------------\n";
-    std::cout << "\nDigite o ID do livro que deseja remover: ";
+    std::cout << "\nInsira o ID do livro que deseja excluir: ";
     int id;
     std::cin >> id;
 
@@ -319,12 +318,12 @@ void Adm::verificarUser(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms
 
     while (true) {
         std::cout << "\n---------------------------\n";
-        std::cout << "\nDigite o ID do usuario: ";
+        std::cout << "\nInsira o ID do usuario: ";
         std::cin >> id;
 
         int opcao;
 
-        std::cout << "\nE um adm (1 - sim, 2 - nao): ";
+        std::cout << "\nEh um administrador? (1 - sim, 2 - nao): ";
         std::cin >> opcao;
 
         if (opcao == 2) {
@@ -351,7 +350,7 @@ void Adm::verificarUser(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms
             }
         }
         else {
-            std::cout << "\nOpcao invalida\n";
+            std::cout << "\nErro!!!\n";
         }
 
         if (found == false) {
@@ -367,7 +366,7 @@ void Adm::opcaoAdmUsuario(std::vector<Usuario*>& usuarios, std::vector<Adm*>& ad
     while (true) {
         int opcao;
         std::cout << "\n---------------------------\n";
-        std::cout << "\n1 - Deletar\n2 - Multar\n0 - Sair\n\nSua opcao: ";
+        std::cout << "Digite:\n1 - Excluir\n2 - Multar\n0 - Sair\n\nSua opcao: ";
         std::cin >> opcao;
 
         if (opcao == 0) {
@@ -380,28 +379,28 @@ void Adm::opcaoAdmUsuario(std::vector<Usuario*>& usuarios, std::vector<Adm*>& ad
             multar(usuarios, adms, idUser);
         }
         else {
-            std::cout << "\nOpcao invalida\n";
+            std::cout << "\nErro!!!\n";
         }
     }
 }
 
 void Adm::multar(std::vector<Usuario*>& usuarios, std::vector<Adm*>& adms, int id) {
     int valor;
-    std::cout << "\n---------------------------\n";
-    std::cout << "\nDigite o valor da multa: ";
+    std::cout << "\n===================================================\n";
+    std::cout << "\nInsira o valor da multa: ";
     std::cin >> valor;
 
     for (Usuario* usuario : usuarios) {
         if (usuario->getId() == id) {
             usuario->setMulta(valor);
-            std::cout << "\nMulta aplicada com sucesso\n";
+            std::cout << "\nMulta aplicada com exito\n";
             break;
         }
     }
     for (Adm* adm : adms) {
         if (adm->getId() == id) {
             adm->setMulta(valor);
-            std::cout << "\nMulta aplicada com sucesso\n";
+            std::cout << "\nMulta aplicada com exito\n";
             break;
         }
     }
